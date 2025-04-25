@@ -2,15 +2,18 @@ services:
   - type: web
     name: n8n
     env: docker
-    plan: free
     repo: https://github.com/mickeykun/n8n
-    dockerfilePath: ./docker/images/n8n/Dockerfile
+    branch: master
+    dockerfilePath: ./Dockerfile
+    startCommand: "n8n start"
+    plan: free
+    region: singapore
     envVars:
-      - key: GENERIC_TIMEZONE
-        value: Asia/Jakarta
       - key: N8N_BASIC_AUTH_ACTIVE
-        value: true
+        value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: admin
+        value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: password123
+        value: "password123"
+      - key: WEBHOOK_URL
+        value: "https://n8n-2-1h9c.onrender.com"
