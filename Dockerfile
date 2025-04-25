@@ -12,4 +12,3 @@ ENV N8N_USER_FOLDER=/home/node/.n8n
 
 EXPOSE 5678
 
-CMD ["n8n"]
